@@ -1,0 +1,122 @@
+[site]
+title = "FRSF: Federated Real-Time State Fabric"
+description = "An open protocol and Rust project for application state shared between independently operated hosts."
+base_url = "/"
+footer_note = "Proposal and pre-implementation project surface. Planned outputs are labelled as planned until published."
+
+[theme]
+paper = "#FAFAF7"
+surface = "#FFFFFF"
+ink = "#1F2933"
+ink_soft = "#5D6875"
+line = "rgba(31, 41, 51, 0.12)"
+accent = "#1D4ED8"
+accent_soft = "#DBEAFE"
+secondary = "#0F766E"
+warning = "#B45309"
+rust = "#B7410E"
+
+[[nav]]
+label = "What it is"
+href = "#what-it-is"
+
+[[nav]]
+label = "How it works"
+href = "#how-it-works"
+
+[[nav]]
+label = "Status"
+href = "#status"
+
+[[pages]]
+slug = "index"
+title = "FRSF: Federated Real-Time State Fabric"
+description = "An open protocol and Rust project for application state shared between independently operated hosts."
+
+[[pages.sections]]
+type = "hero"
+title = "FRSF"
+tagline = "Application state with an explicit federation contract."
+subtitle = "A proposed open protocol and Rust implementation for state boxes that declare authority, ordering, replication, visibility, retention, reconciliation, and freshness."
+
+[[pages.sections.ctas]]
+label = "Read the design record"
+href = "https://codefloe.com/caniko/frsf"
+primary = true
+
+[[pages.sections.ctas]]
+label = "GitHub mirror"
+href = "https://github.com/caniko/frsf"
+
+[[pages.sections]]
+type = "feature_grid"
+id = "what-it-is"
+
+[[pages.sections.features]]
+title = "Typed state boxes"
+description = "Each state class can carry its own authority, ordering, visibility, retention, and recovery rules."
+highlight = true
+
+[[pages.sections.features]]
+title = "Signed transitions"
+description = "Applications submit explicit transitions rather than relying on an undocumented global write path."
+
+[[pages.sections.features]]
+title = "Deterministic reduction"
+description = "Reducers are intended to produce replayable state roots, projections, receipts, and bounded effects."
+
+[[pages.sections.features]]
+title = "Bounded delivery"
+description = "Relays deliver the representation permitted by a profile, with freshness, backpressure, and expiry treated as protocol concerns."
+
+[[pages.sections.features]]
+title = "Operator recovery"
+description = "Checkpoints, replay, authority changes, and rejoin behavior are planned as inspectable acceptance cases."
+
+[[pages.sections.features]]
+title = "Reproducible deployment"
+description = "Nix and NixOS roles are planned so multi-host experiments can be rebuilt and inspected."
+
+[[pages.sections]]
+type = "workflow_steps"
+id = "how-it-works"
+heading = "A state transition, made inspectable"
+intro = "The proposed flow keeps policy and evidence visible from submission through recovery."
+
+[[pages.sections.steps]]
+title = "Define a profile"
+description = "Declare the state box, authority epoch, ordering, visibility, retention, and reconciliation policy."
+
+[[pages.sections.steps]]
+title = "Submit a transition"
+description = "Send a signed, typed transition through the application or relay boundary."
+
+[[pages.sections.steps]]
+title = "Reduce and commit"
+description = "Run the deterministic reducer and record the resulting root, projection, receipt, or rejection."
+
+[[pages.sections.steps]]
+title = "Relay permitted state"
+description = "Deliver only the profile-allowed representation while respecting freshness and resource bounds."
+
+[[pages.sections.steps]]
+title = "Replay and recover"
+description = "Use logs and checkpoints to inspect behavior, transfer authority when permitted, and rejoin a node."
+
+[[pages.sections]]
+type = "trust_panel"
+id = "status"
+heading = "Status and boundaries"
+intro = "This is a public proposal surface, not a claim that the planned implementation already exists."
+
+[[pages.sections.items]]
+title = "Current maturity"
+description = "Proposal / pre-implementation. Planned artifacts will be marked as they are published."
+
+[[pages.sections.items]]
+title = "No production claim"
+description = "This page does not claim production deployment, adoption, audit completion, or performance results."
+
+[[pages.sections.items]]
+title = "Open review"
+description = "Design feedback is welcome when it is tied to a reproducible example or acceptance criterion."

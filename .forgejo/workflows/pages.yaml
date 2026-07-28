@@ -1,0 +1,56 @@
+name: pages
+
+on:
+  push:
+    branches:
+      - trunk
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ forge.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: codefloe-global
+    env:
+      NIX_CONFIG: "experimental-features = nix-command flakes"
+    steps:
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Build site
+        run: |
+          set -euo pipefail
+          nix build .#site --out-link result-site
+          test -s result-site/index.html
+
+      - name: Publish CodeFloe Pages branch
+        env:
+          FORGE_TOKEN: ${{ forge.token }}
+        run: |
+          set -euo pipefail
+          remote="https://forgejo-actions:${FORGE_TOKEN}@codefloe.com/${{ forge.repository }}.git"
+          pages_dir="$(mktemp -d)"
+          git init -b pages "$pages_dir"
+          git -C "$pages_dir" remote add origin "$remote"
+          if git ls-remote --exit-code --heads origin pages >/dev/null 2>&1; then
+            git -C "$pages_dir" fetch --quiet origin pages
+            git -C "$pages_dir" reset --hard FETCH_HEAD
+          fi
+          find "$pages_dir" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf -- {} +
+          cp -r result-site/. "$pages_dir/"
+          printf '%s\n' \
+            'image: alpine:latest' \
+            'command: "echo '\''No build needed'\''"' \
+            'public: .' > "$pages_dir/statichost.yml"
+          git -C "$pages_dir" config user.name forgejo-actions
+          git -C "$pages_dir" config user.email forgejo-actions@codefloe.com
+          git -C "$pages_dir" add -A
+          if ! git -C "$pages_dir" diff --cached --quiet; then
+            git -C "$pages_dir" commit -m "Deploy generated site"
+            git -C "$pages_dir" push --force origin HEAD:pages
+          fi
