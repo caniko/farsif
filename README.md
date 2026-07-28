@@ -5,8 +5,8 @@ that must move between independently operated hosts. It makes the contract for
 each state box explicit: authority, ordering, replication, visibility,
 retention, reconciliation, and freshness.
 
-This repository is the public project surface and initial design record. The
-implementation is not yet released; planned work will publish the protocol,
+This repository is the initial project surface and design record. The
+implementation is not yet released; planned hosted surfaces will publish the protocol,
 reference kernel, conformance vectors, reproducible Nix/NixOS deployment, and
 fault-injection tests as they become available.
 
