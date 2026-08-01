@@ -12,9 +12,9 @@ fault-injection tests as they become available.
 
 ## Project links
 
-- Project page: <https://frsf.caniko.codefloe.page>
-- Canonical repository: <https://codefloe.com/caniko/frsf>
-- GitHub mirror: <https://github.com/caniko/frsf>
+- Project page: <https://farsif.tartanoglu.com>
+- Canonical repository: <https://github.com/caniko/frsf>
+- CodeFloe mirror: <https://codefloe.com/caniko/frsf>
 
 ## Design direction
 

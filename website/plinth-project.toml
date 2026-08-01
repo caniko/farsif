@@ -40,13 +40,13 @@ tagline = "Application state with an explicit federation contract."
 subtitle = "A proposed open protocol and Rust implementation for state boxes that declare authority, ordering, replication, visibility, retention, reconciliation, and freshness."
 
 [[pages.sections.ctas]]
-label = "Read the design record"
-href = "https://codefloe.com/caniko/frsf"
+label = "View on GitHub"
+href = "https://github.com/caniko/frsf"
 primary = true
 
 [[pages.sections.ctas]]
-label = "GitHub mirror"
-href = "https://github.com/caniko/frsf"
+label = "CodeFloe mirror"
+href = "https://codefloe.com/caniko/frsf"
 
 [[pages.sections]]
 type = "feature_grid"
