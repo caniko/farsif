@@ -13,7 +13,7 @@ fault-injection tests as they become available.
 ## Project links
 
 - Project page: <https://farsif.tartanoglu.com>
-- Canonical repository: <https://github.com/caniko/frsf>
+- Canonical repository: <https://github.com/caniko/farsif>
 
 ## Design direction
 

@@ -41,7 +41,7 @@ subtitle = "A proposed open protocol and Rust implementation for state boxes tha
 
 [[pages.sections.ctas]]
 label = "View on GitHub"
-href = "https://github.com/caniko/frsf"
+href = "https://github.com/caniko/farsif"
 primary = true
 
 [[pages.sections]]
