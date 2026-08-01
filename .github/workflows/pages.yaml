@@ -31,6 +31,8 @@ jobs:
 
       - name: Start compiler cache
         run: |
+          sudo apt-get update
+          sudo apt-get install --yes redis-server
           sudo install -d -m 0777 /run/redis-sccache
           sudo redis-server \
             --daemonize yes \
