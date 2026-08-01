@@ -22,10 +22,21 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
-      NIX_CONFIG: "experimental-features = nix-command flakes"
+      NIX_CONFIG: |
+        experimental-features = nix-command flakes
+        extra-sandbox-paths = /run/redis-sccache
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Start compiler cache
+        run: |
+          sudo install -d -m 0777 /run/redis-sccache
+          sudo redis-server \
+            --daemonize yes \
+            --port 0 \
+            --unixsocket /run/redis-sccache/redis.sock \
+            --unixsocketperm 777
 
       - name: Install Nix
         uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31
