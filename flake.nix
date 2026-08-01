@@ -1,5 +1,5 @@
 {
-  description = "FRSF: Federated Real-Time State Fabric project site";
+  description = "Farsif: Federated Real-Time State Fabric project site";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -18,7 +18,7 @@
       packages = forAllSystems (system:
         let
           site = plinth.lib.${system}.mkProjectSite {
-            pname = "frsf-site";
+            pname = "farsif-site";
             domain = "farsif.tartanoglu.com";
             configPath = ./website/plinth-project.toml;
           };

@@ -1,6 +1,6 @@
-# FRSF: Federated Real-Time State Fabric
+# Farsif: Federated Real-Time State Fabric
 
-FRSF is a proposed open protocol and Rust implementation for application state
+Farsif is a proposed open protocol and Rust implementation for application state
 that must move between independently operated hosts. It makes the contract for
 each state box explicit: authority, ordering, replication, visibility,
 retention, reconciliation, and freshness.
@@ -14,7 +14,6 @@ fault-injection tests as they become available.
 
 - Project page: <https://farsif.tartanoglu.com>
 - Canonical repository: <https://github.com/caniko/frsf>
-- CodeFloe mirror: <https://codefloe.com/caniko/frsf>
 
 ## Design direction
 
@@ -25,7 +24,7 @@ fault-injection tests as they become available.
   recovery boundaries.
 - Reproducible Nix/NixOS roles make multi-host experiments inspectable.
 
-FRSF is not presented as a replacement for every database, a global ledger, or
+Farsif is not presented as a replacement for every database, a global ledger, or
 an existing federation project. The first implementation will be evaluated by
 replay, conformance, failure, recovery, and resource-bound tests.
 

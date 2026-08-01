@@ -1,5 +1,5 @@
 [site]
-title = "FRSF: Federated Real-Time State Fabric"
+title = "Farsif: Federated Real-Time State Fabric"
 description = "An open protocol and Rust project for application state shared between independently operated hosts."
 base_url = "/"
 footer_note = "Proposal and pre-implementation project surface. Planned outputs are labelled as planned until published."
@@ -30,12 +30,12 @@ href = "#status"
 
 [[pages]]
 slug = "index"
-title = "FRSF: Federated Real-Time State Fabric"
+title = "Farsif: Federated Real-Time State Fabric"
 description = "An open protocol and Rust project for application state shared between independently operated hosts."
 
 [[pages.sections]]
 type = "hero"
-title = "FRSF"
+title = "Farsif"
 tagline = "Application state with an explicit federation contract."
 subtitle = "A proposed open protocol and Rust implementation for state boxes that declare authority, ordering, replication, visibility, retention, reconciliation, and freshness."
 
@@ -43,10 +43,6 @@ subtitle = "A proposed open protocol and Rust implementation for state boxes tha
 label = "View on GitHub"
 href = "https://github.com/caniko/frsf"
 primary = true
-
-[[pages.sections.ctas]]
-label = "CodeFloe mirror"
-href = "https://codefloe.com/caniko/frsf"
 
 [[pages.sections]]
 type = "feature_grid"
