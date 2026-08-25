@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     plinth = {
-      url = "git+https://codeberg.org/caniko/plinth";
+      url = "git+https://github.com/caniko/plinth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
